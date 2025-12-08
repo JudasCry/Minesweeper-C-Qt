@@ -209,12 +209,15 @@ void GameField::resetField() {
     for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
 
+            grid[y][x]->setMine(false);
             grid[y][x]->setRevealed(false);
             grid[y][x]->setFlagged(false);
+            grid[y][x]->setAdjacentMines(0);
 
         }
     }
 
+    totalMines = 0;
     cellsRevealed = 0;
     flagsPlaced = 0;
 

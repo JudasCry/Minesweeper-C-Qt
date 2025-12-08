@@ -15,10 +15,7 @@ Game::Game(const Difficulty& difficulty, const Settings& settings, std::shared_p
 
 }
 
-Game::~Game()
-{
-
-}
+Game::~Game() {}
 
 void Game::startGame(const Point& safeStartPoint) {
 
@@ -27,8 +24,10 @@ void Game::startGame(const Point& safeStartPoint) {
 
     int numMinesToPlace = currentDifficulty.getMines();
 
-    minePlacer.placeMines(field, numMinesToPlace, this->safeStartPoint);
+    minePlacer.placeMines(field, numMinesToPlace, safeStartPoint);
     field.countAdjacentMines();
+
+    field.revealCell(safeStartPoint);
 
     timer.restart();
     timer.start();
@@ -37,17 +36,14 @@ void Game::startGame(const Point& safeStartPoint) {
 
 void Game::restartGame() {
 
-    this->gameState = GameState::Running;
+    this->gameState = GameState::Waiting;
 
     field.resetField();
 
-    int numMinesToPlace = currentDifficulty.getMines();
-
-    minePlacer.placeMines(field, numMinesToPlace, this->safeStartPoint);
-    field.countAdjacentMines();
+    this->safeStartPoint = Point(-1, -1); // Сбрасываем безопасную точку
 
     timer.restart();
-    timer.start();
+    timer.stop();
 
 }
 
@@ -105,7 +101,7 @@ void Game::flagToggle(Point flagPoint) {
     }
 }
 
-const GameField& Game::getGameField() const {
+GameField& Game::getGameField() {
     return field;
 }
 

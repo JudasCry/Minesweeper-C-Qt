@@ -32,7 +32,7 @@ public:
     void endGame(bool won);
     void cellClick(Point clickPoint);
     void flagToggle(Point flagPoint);
-    const GameField& getGameField() const;
+    GameField& getGameField() ;
     GameTimer& getTimer();
     GameState& getGameState();
     const Difficulty& getCurrentDifficulty();

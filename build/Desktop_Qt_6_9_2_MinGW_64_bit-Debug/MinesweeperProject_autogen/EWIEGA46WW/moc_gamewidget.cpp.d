@@ -1,6 +1,5 @@
-C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/MinesweeperProject_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/QtProjects/MinesweeperProject/mainwindow.hpp \
+C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/MinesweeperProject_autogen/EWIEGA46WW/moc_gamewidget.cpp: C:/QtProjects/MinesweeperProject/gamewidget.hpp \
   C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/MinesweeperProject_autogen/moc_predefs.h \
-  C:/Qt1/6.9.2/mingw_64/include/QtCore/QPointer \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/QSettings \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/QString \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/QTime \
@@ -83,7 +82,6 @@ C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/Mines
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qoverload.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qpair.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qpoint.h \
-  C:/Qt1/6.9.2/mingw_64/include/QtCore/qpointer.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qprocessordetection.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qrect.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qrefcount.h \
@@ -168,10 +166,8 @@ C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/Mines
   C:/Qt1/6.9.2/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt1/6.9.2/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt1/6.9.2/mingw_64/include/QtWidgets/QMainWindow \
-  C:/Qt1/6.9.2/mingw_64/include/QtWidgets/QPushButton \
-  C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+  C:/Qt1/6.9.2/mingw_64/include/QtWidgets/QWidget \
   C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qmainwindow.h \
-  C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qpushbutton.h \
   C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qtwidgets-config.h \

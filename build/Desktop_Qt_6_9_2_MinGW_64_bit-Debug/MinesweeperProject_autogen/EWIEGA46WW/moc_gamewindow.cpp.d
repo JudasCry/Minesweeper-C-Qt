@@ -1,5 +1,10 @@
 C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/MinesweeperProject_autogen/EWIEGA46WW/moc_gamewindow.cpp: C:/QtProjects/MinesweeperProject/gamewindow.hpp \
   C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/MinesweeperProject_autogen/moc_predefs.h \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/QPointer \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/QSettings \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/QString \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/QTime \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/QTimer \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/q17memory.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/q20functional.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/q20iterator.h \
@@ -7,6 +12,7 @@ C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/Mines
   C:/Qt1/6.9.2/mingw_64/include/QtCore/q20type_traits.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/q20utility.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/q23utility.h \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qalgorithms.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qanystringview.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qarraydata.h \
@@ -16,11 +22,13 @@ C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/Mines
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qatomic.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qatomic_cxx11.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qbasicatomic.h \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/qbasictimer.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qbindingstorage.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qbytearray.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qbytearrayalgorithms.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qbytearraylist.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qbytearrayview.h \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/qcalendar.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qchar.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qcompare.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qcompare_impl.h \
@@ -34,8 +42,12 @@ C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/Mines
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qcontiguouscache.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qdarwinhelpers.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qdatastream.h \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/qdatetime.h \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/qdeadlinetimer.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qdebug.h \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/qelapsedtimer.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qendian.h \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/qeventloop.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qexceptionhandling.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qflags.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qfloat16.h \
@@ -53,6 +65,7 @@ C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/Mines
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qlatin1stringview.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qline.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qlist.h \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/qlocale.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qlogging.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qmalloc.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qmap.h \
@@ -70,12 +83,14 @@ C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/Mines
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qoverload.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qpair.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qpoint.h \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/qpointer.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qprocessordetection.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qrect.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qrefcount.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qscopedpointer.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qscopeguard.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qset.h \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/qsettings.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qshareddata.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qshareddata_impl.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qsharedpointer.h \
@@ -109,6 +124,7 @@ C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/Mines
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qtenvironmentvariables.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qtextstream.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qtformat_impl.h \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/qtimer.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qtmetamacros.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qtnoop.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qtpreprocessorsupport.h \
@@ -152,7 +168,10 @@ C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/Mines
   C:/Qt1/6.9.2/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt1/6.9.2/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt1/6.9.2/mingw_64/include/QtWidgets/QMainWindow \
+  C:/Qt1/6.9.2/mingw_64/include/QtWidgets/QPushButton \
+  C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qabstractbutton.h \
   C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qmainwindow.h \
+  C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qpushbutton.h \
   C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
@@ -208,6 +227,8 @@ C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/Mines
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/postypes.h \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/predefined_ops.h \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ptr_traits.h \
+  C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/random.h \
+  C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/random.tcc \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/range_access.h \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/refwrap.h \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
@@ -293,6 +314,7 @@ C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/Mines
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_memory_defs.h \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_numeric_defs.h \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/pstl_config.h \
+  C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/random \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ratio \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stdexcept \
@@ -330,13 +352,20 @@ C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/Mines
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/error_constants.h \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/gthr-default.h \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/gthr.h \
+  C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/opt_random.h \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
+  C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/emmintrin.h \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/limits.h \
+  C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mm_malloc.h \
+  C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mmintrin.h \
+  C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mwaitintrin.h \
+  C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/pmmintrin.h \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdarg.h \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdbool.h \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h \
   C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h \
+  C:/Qt1/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/xmmintrin.h \
   C:/Qt1/Tools/mingw1310_64/x86_64-w64-mingw32/include/_mingw.h \
   C:/Qt1/Tools/mingw1310_64/x86_64-w64-mingw32/include/_mingw_mac.h \
   C:/Qt1/Tools/mingw1310_64/x86_64-w64-mingw32/include/_mingw_off_t.h \
@@ -371,4 +400,14 @@ C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/Mines
   C:/Qt1/Tools/mingw1310_64/x86_64-w64-mingw32/include/sys/types.h \
   C:/Qt1/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt1/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
-  C:/Qt1/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
+  C:/Qt1/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
+  C:/QtProjects/MinesweeperProject/cell.hpp \
+  C:/QtProjects/MinesweeperProject/difficulty.hpp \
+  C:/QtProjects/MinesweeperProject/game.hpp \
+  C:/QtProjects/MinesweeperProject/gamefield.hpp \
+  C:/QtProjects/MinesweeperProject/gamestate.hpp \
+  C:/QtProjects/MinesweeperProject/gametimer.hpp \
+  C:/QtProjects/MinesweeperProject/mineplacer.hpp \
+  C:/QtProjects/MinesweeperProject/point.hpp \
+  C:/QtProjects/MinesweeperProject/settings.hpp \
+  C:/QtProjects/MinesweeperProject/statistics.hpp
