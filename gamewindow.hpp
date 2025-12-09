@@ -18,16 +18,17 @@ public:
 
     static constexpr int DEFAULT_CELL_SIZE = 30; // Размер клетки
     static constexpr int CELL_SPACING = 1; // Отступ м/д клетками
-    static constexpr int WINDOW_PADDING_WIDTH = 100; // Отступ окна по ширине
-    static constexpr int WINDOW_PADDING_HEIGHT = 200; // Отступ окна по высоте
 
-    // Контейнер для хранения цветов цифр //
-    static const QMap<int , QString> NUMBER_COLORS;
+    static const QMap<int , QString> NUMBER_COLORS; // Контейнер для хранения цветов цифр
+
+    static const QString CLOSED_CELL_STYLE; // Стиль для закрытой клетки
+    static const QString OPENED_CELL_STYLE; // Стиль для открытой клетки
+    static const QString MINE_CELL_STYLE; // Стиль для клетки с миной
 
 private:
 
     std::unique_ptr<Ui::GameWindow> ui;
-     std::unique_ptr<Game> game;
+    std::unique_ptr<Game> game;
     QVector<QVector<QPointer<QPushButton>>> buttons; // Двумерный массив для клеток
 
 public:
@@ -37,6 +38,9 @@ public:
                         std::shared_ptr<Statistics> statistics,
                         QWidget *parent = nullptr);
     ~GameWindow();
+
+    void setupConnections();
+    void setupUI(const Difficulty& currentDifficulty);
 
     void closeEvent(QCloseEvent* event);
 
@@ -51,6 +55,8 @@ public:
     void createGameField();
     void setupWindowSize(int width, int height, int cellSize);
     int calculateOptimalCellSize(int width, int height) const;
+
+    void changeDifficulty(QString name, int width, int height, int mines);
 
 private slots:
 

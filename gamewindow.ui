@@ -35,8 +35,19 @@
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QLabel" name="minesLabel">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>32</pointsize>
+          </font>
+         </property>
          <property name="text">
-          <string>minesLabel</string>
+          <string>000</string>
          </property>
         </widget>
        </item>
@@ -81,8 +92,13 @@
        </item>
        <item>
         <widget class="QLabel" name="timerLabel">
+         <property name="font">
+          <font>
+           <pointsize>32</pointsize>
+          </font>
+         </property>
          <property name="text">
-          <string>TimeLabel</string>
+          <string>000</string>
          </property>
         </widget>
        </item>
@@ -90,7 +106,11 @@
      </widget>
     </item>
     <item>
-     <widget class="QWidget" name="gameArea" native="true"/>
+     <widget class="QWidget" name="gameArea" native="true">
+      <property name="layoutDirection">
+       <enum>Qt::LayoutDirection::LeftToRight</enum>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -107,8 +127,16 @@
     <property name="title">
      <string>Игра</string>
     </property>
-    <addaction name="action"/>
-    <addaction name="action_2"/>
+    <widget class="QMenu" name="menu_3">
+     <property name="title">
+      <string>Сложность</string>
+     </property>
+     <addaction name="beginnerDifficulty"/>
+     <addaction name="intermediateDifficulty"/>
+     <addaction name="expertDifficulty"/>
+    </widget>
+    <addaction name="restartTrigger"/>
+    <addaction name="menu_3"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -119,14 +147,24 @@
    <addaction name="menu_2"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="action">
+  <action name="restartTrigger">
    <property name="text">
     <string>Новая игра</string>
    </property>
   </action>
-  <action name="action_2">
+  <action name="beginnerDifficulty">
    <property name="text">
-    <string>Сложность</string>
+    <string>Новичок</string>
+   </property>
+  </action>
+  <action name="intermediateDifficulty">
+   <property name="text">
+    <string>Любитель</string>
+   </property>
+  </action>
+  <action name="expertDifficulty">
+   <property name="text">
+    <string>Эксперт</string>
    </property>
   </action>
  </widget>

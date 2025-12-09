@@ -32,12 +32,14 @@ public:
     void endGame(bool won);
     void cellClick(Point clickPoint);
     void flagToggle(Point flagPoint);
+
     GameField& getGameField() ;
     GameTimer& getTimer();
     GameState& getGameState();
     const Difficulty& getCurrentDifficulty();
-    void setCurrentDifficulty(const Difficulty& newDifficulty);
     const Settings& getCurrentSettings();
     std::shared_ptr<Statistics> getStatistics();
+
+    void setCurrentDifficulty(const Difficulty& newDifficulty);
 
 };

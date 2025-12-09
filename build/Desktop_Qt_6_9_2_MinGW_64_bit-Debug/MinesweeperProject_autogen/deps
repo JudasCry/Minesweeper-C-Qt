@@ -315,6 +315,21 @@ MinesweeperProject_autogen/timestamp: \
 	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake \
 	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake \
 	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake \
+	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgAdditionalTargetInfo.cmake \
+	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfig.cmake \
+	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfigVersion.cmake \
+	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfigVersionImpl.cmake \
+	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgDependencies.cmake \
+	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgTargets-relwithdebinfo.cmake \
+	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgTargets.cmake \
+	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgVersionlessAliasTargets.cmake \
+	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateAdditionalTargetInfo.cmake \
+	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateConfig.cmake \
+	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateConfigVersion.cmake \
+	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateConfigVersionImpl.cmake \
+	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateDependencies.cmake \
+	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateTargets.cmake \
+	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateVersionlessAliasTargets.cmake \
 	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake \
 	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginConfig.cmake \
 	C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake \
@@ -632,6 +647,7 @@ MinesweeperProject_autogen/timestamp: \
 	C:/QtProjects/MinesweeperProject/mineplacer.hpp \
 	C:/QtProjects/MinesweeperProject/point.cpp \
 	C:/QtProjects/MinesweeperProject/point.hpp \
+	C:/QtProjects/MinesweeperProject/resources.qrc \
 	C:/QtProjects/MinesweeperProject/settings.cpp \
 	C:/QtProjects/MinesweeperProject/settings.hpp \
 	C:/QtProjects/MinesweeperProject/statistics.cpp \
