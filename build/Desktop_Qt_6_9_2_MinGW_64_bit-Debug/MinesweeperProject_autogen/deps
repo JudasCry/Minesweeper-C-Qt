@@ -166,9 +166,11 @@ MinesweeperProject_autogen/timestamp: \
 	C:/Qt1/6.9.2/mingw_64/include/QtGui/qtransform.h \
 	C:/Qt1/6.9.2/mingw_64/include/QtGui/qwindowdefs.h \
 	C:/Qt1/6.9.2/mingw_64/include/QtGui/qwindowdefs_win.h \
+	C:/Qt1/6.9.2/mingw_64/include/QtWidgets/QDialog \
 	C:/Qt1/6.9.2/mingw_64/include/QtWidgets/QMainWindow \
 	C:/Qt1/6.9.2/mingw_64/include/QtWidgets/QPushButton \
 	C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+	C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qdialog.h \
 	C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qmainwindow.h \
 	C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qpushbutton.h \
 	C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qsizepolicy.h \
@@ -650,8 +652,11 @@ MinesweeperProject_autogen/timestamp: \
 	C:/QtProjects/MinesweeperProject/resources.qrc \
 	C:/QtProjects/MinesweeperProject/settings.cpp \
 	C:/QtProjects/MinesweeperProject/settings.hpp \
+	C:/QtProjects/MinesweeperProject/settingswindow.cpp \
+	C:/QtProjects/MinesweeperProject/settingswindow.hpp \
 	C:/QtProjects/MinesweeperProject/statistics.cpp \
 	C:/QtProjects/MinesweeperProject/statistics.hpp \
 	C:/QtProjects/MinesweeperProject/gamewindow.ui \
 	C:/QtProjects/MinesweeperProject/mainwindow.ui \
+	C:/QtProjects/MinesweeperProject/settingswindow.ui \
 	C:/Qt1/Tools/CMake_64/bin/cmake.exe

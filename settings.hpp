@@ -22,6 +22,8 @@ public:
 
     Settings();
 
+    std::shared_ptr<Settings> clone() const;
+
     void load();
     void save() const;
     void resetToDefaults();

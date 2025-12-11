@@ -13,6 +13,18 @@ Settings::Settings()
     Settings::load();
 }
 
+// Клонирование настроек //
+std::shared_ptr<Settings> Settings::clone() const {
+
+    auto cloned = std::make_shared<Settings>();
+
+    cloned->language = this->language;
+    cloned->soundEnabled = this->soundEnabled;
+    cloned->theme = this->theme;
+
+    return cloned;
+}
+
 // Загрузка настроек из файла //
 void Settings::load() {
 

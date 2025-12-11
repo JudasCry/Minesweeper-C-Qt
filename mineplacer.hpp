@@ -17,6 +17,7 @@ public:
 
     void placeMines(GameField& field, int mines, Point safePoint);
     bool canPlaceMine(const GameField& field, Point point, Point safePoint) const;
+    bool inSafeZone(Point point, Point safePoint, int radius) const;
     Point getRandomPosition(int maxX, int maxY);
 
 };

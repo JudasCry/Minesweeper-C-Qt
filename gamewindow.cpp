@@ -36,7 +36,8 @@ GameWindow::GameWindow(const Difficulty& currentDifficulty,
 
     : QMainWindow(parent),
       ui(std::make_unique<Ui::GameWindow>()),
-      game(nullptr)
+      game(nullptr),
+      currentSettings(std::make_shared<Settings>(settings))
 {
 
     ui->setupUi(this);
@@ -83,7 +84,14 @@ void GameWindow::setupConnections() {
 void GameWindow::setupUI(const Difficulty& currentDifficulty) {
 
     // Устанавливаем смайлик на кнопку рестарта //
-    ui->restartButton->setIcon(QIcon(":/images/smile1.svg"));
+    QString theme = currentSettings->getTheme();
+
+    if (theme == "dark") {
+        ui->restartButton->setIcon(QIcon(":/images/smile_dark.svg"));
+    } else {
+        ui->restartButton->setIcon(QIcon(":/images/smile_default.svg"));
+    }
+
     ui->restartButton->setIconSize(QSize(64, 64));
     ui->restartButton->setText("");
     ui->restartButton->setFixedSize(70, 70);

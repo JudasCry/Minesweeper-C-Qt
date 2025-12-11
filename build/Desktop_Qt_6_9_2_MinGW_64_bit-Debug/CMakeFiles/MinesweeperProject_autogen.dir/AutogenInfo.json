@@ -620,6 +620,12 @@
 			null
 		],
 		[
+			"C:/QtProjects/MinesweeperProject/settingswindow.hpp",
+			"MU",
+			"EWIEGA46WW/moc_settingswindow.cpp",
+			null
+		],
+		[
 			"C:/QtProjects/MinesweeperProject/statistics.hpp",
 			"MU",
 			"EWIEGA46WW/moc_statistics.cpp",
@@ -710,6 +716,7 @@
 		[ "C:/QtProjects/MinesweeperProject/mineplacer.cpp", "MU", null ],
 		[ "C:/QtProjects/MinesweeperProject/point.cpp", "MU", null ],
 		[ "C:/QtProjects/MinesweeperProject/settings.cpp", "MU", null ],
+		[ "C:/QtProjects/MinesweeperProject/settingswindow.cpp", "MU", null ],
 		[ "C:/QtProjects/MinesweeperProject/statistics.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

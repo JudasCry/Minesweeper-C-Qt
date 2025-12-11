@@ -39,6 +39,7 @@ find_package(Qt6 REQUIRED COMPONENTS Svg)
         gametimer.hpp gametimer.cpp
         gamestate.hpp
         gamewindow.hpp gamewindow.cpp gamewindow.ui
+        settingswindow.hpp settingswindow.cpp settingswindow.ui
 
     )
 

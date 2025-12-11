@@ -29,6 +29,7 @@ private:
 
     std::unique_ptr<Ui::GameWindow> ui;
     std::unique_ptr<Game> game;
+    std::shared_ptr<Settings> currentSettings;
     QVector<QVector<QPointer<QPushButton>>> buttons; // Двумерный массив для клеток
 
 public:

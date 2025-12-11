@@ -2,3 +2,4 @@
 #include "EWIEGA46WW/moc_gametimer.cpp"
 #include "EWIEGA46WW/moc_gamewindow.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"
+#include "EWIEGA46WW/moc_settingswindow.cpp"

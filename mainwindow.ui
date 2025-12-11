@@ -99,7 +99,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="exitButton">
+       <widget class="QPushButton" name="quitButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
           <horstretch>0</horstretch>

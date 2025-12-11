@@ -1,4 +1,4 @@
-C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/MinesweeperProject_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/QtProjects/MinesweeperProject/mainwindow.hpp \
+C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/MinesweeperProject_autogen/EWIEGA46WW/moc_settingswindow.cpp: C:/QtProjects/MinesweeperProject/settingswindow.hpp \
   C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/MinesweeperProject_autogen/moc_predefs.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/QSettings \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/QString \
@@ -154,10 +154,9 @@ C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/Mines
   C:/Qt1/6.9.2/mingw_64/include/QtGui/qtransform.h \
   C:/Qt1/6.9.2/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt1/6.9.2/mingw_64/include/QtGui/qwindowdefs_win.h \
-  C:/Qt1/6.9.2/mingw_64/include/QtWidgets/QMainWindow \
-  C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qmainwindow.h \
+  C:/Qt1/6.9.2/mingw_64/include/QtWidgets/QDialog \
+  C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qdialog.h \
   C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qsizepolicy.h \
-  C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt1/6.9.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -375,5 +374,4 @@ C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/Mines
   C:/Qt1/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt1/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt1/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
-  C:/QtProjects/MinesweeperProject/settings.hpp \
-  C:/QtProjects/MinesweeperProject/statistics.hpp
+  C:/QtProjects/MinesweeperProject/settings.hpp

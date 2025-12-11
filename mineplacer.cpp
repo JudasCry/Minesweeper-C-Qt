@@ -2,16 +2,20 @@
 #include "gamefield.hpp"
 #include <chrono>
 
-MinePlacer::MinePlacer() : randomGenerator(std::chrono::system_clock::now().time_since_epoch().count())
-{
+MinePlacer::MinePlacer() : randomGenerator(std::chrono::system_clock::now().time_since_epoch().count()) {}
 
-}
-
+// Расставляем мины на поле //
 void MinePlacer::placeMines(GameField& field, int mines, Point safePoint) {
 
     int placedMines = 0;
     int fieldWidth = field.getWidth();
     int fieldHeight = field.getHeight();
+
+    int safeRadius = 1; // Определяем безопасную зону 3x3
+
+    if (fieldWidth >= 16 || fieldHeight >= 16) {
+        safeRadius = 1; // Зона 5x5
+    }
 
     int attempts = 0;
     int maxAttempts = fieldWidth * fieldHeight * 2;
@@ -20,15 +24,18 @@ void MinePlacer::placeMines(GameField& field, int mines, Point safePoint) {
 
         Point randomPos = getRandomPosition(fieldWidth, fieldHeight);
 
+        if (inSafeZone(randomPos, safePoint, safeRadius)) {
+            attempts++;
+            continue;
+        }
+
         if (canPlaceMine(field, randomPos, safePoint)) {
 
             Cell* cell = field.getCell(randomPos.getX(), randomPos.getY());
 
             if (cell) {
-
                 cell->setMine(true);
                 placedMines++;
-
             }
         }
 
@@ -40,11 +47,6 @@ void MinePlacer::placeMines(GameField& field, int mines, Point safePoint) {
 
 bool MinePlacer::canPlaceMine(const GameField& field, Point point, Point safePoint) const {
 
-    // Проверяем не является ли это безопасной точкой //
-    if (point.getX() == safePoint.getX() && point.getY() == safePoint.getY()) {
-        return false;
-    }
-
     const Cell* cell = field.getCell(point.getX(), point.getY());
 
     if (cell && !cell->getIsMine()) {
@@ -53,6 +55,15 @@ bool MinePlacer::canPlaceMine(const GameField& field, Point point, Point safePoi
 
     return false;
 
+}
+
+// Проверка на нахождение точки в безопасной зоне вокруг безопасной точки //
+bool MinePlacer::inSafeZone(Point point, Point safePoint, int radius) const {
+
+    int dx = std::abs(point.getX() - safePoint.getX());
+    int dy = std::abs(point.getY() - safePoint.getY());
+
+    return dx <= radius && dy <= radius;
 }
 
 Point MinePlacer::getRandomPosition(int maxX, int maxY) {
