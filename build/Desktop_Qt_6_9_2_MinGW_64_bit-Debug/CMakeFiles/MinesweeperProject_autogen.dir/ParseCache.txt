@@ -1147,8 +1147,10 @@ C:/QtProjects/MinesweeperProject/gametimer.hpp
  mdp:C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/MinesweeperProject_autogen/moc_predefs.h
  mdp:C:/QtProjects/MinesweeperProject/gametimer.hpp
 C:/QtProjects/MinesweeperProject/mineplacer.cpp
+C:/QtProjects/MinesweeperProject/themestyles.hpp
 C:/QtProjects/MinesweeperProject/mineplacer.hpp
 C:/QtProjects/MinesweeperProject/gametimer.cpp
+C:/QtProjects/MinesweeperProject/themestyles.cpp
 C:/QtProjects/MinesweeperProject/point.hpp
 C:/QtProjects/MinesweeperProject/statistics.hpp
 C:/QtProjects/MinesweeperProject/cell.cpp

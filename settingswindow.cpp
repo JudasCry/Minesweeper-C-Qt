@@ -1,5 +1,6 @@
 #include "settingswindow.hpp"
 #include "ui_settingswindow.h"
+#include "themestyles.hpp"
 
 SettingsWindow::SettingsWindow(std::shared_ptr<Settings> settings, QWidget* parent)
 
@@ -65,6 +66,7 @@ void SettingsWindow::setupConnections() {
 
 }
 
+// Установка интерфейса из загруженных настроек //
 void SettingsWindow::loadSettingsToUI() {
 
     if (!tempSettings) return;
@@ -127,61 +129,10 @@ void SettingsWindow::updateThemeDisplay()
 
 }
 
+// Предпоказ новой выбранной темы //
 void SettingsWindow::applyThemePreview() {
-
     QString theme = tempSettings->getTheme();
-
-    if (theme == "dark") {
-        this->setStyleSheet(
-            "QDialog {"
-            "    background-color: #2d2d2d;"
-            "}"
-            "QLabel {"
-            "    color: white;"
-            "}"
-            "QPushButton {"
-            "    background-color: #3d3d3d;"
-            "    color: white;"
-            "    border: 1px solid #555;"
-            "}"
-            "QRadioButton {"
-            "    color: white;"
-            "}"
-            "QCheckBox {"
-            "    color: white;"
-            "}"
-            "QGroupBox {"
-            "    color: white;"
-            "    border: 1px solid #555;"
-            "}"
-            );
-    } else if (theme == "default") {
-        // Светлый предпросмотр
-        this->setStyleSheet(
-            "QDialog {"
-            "    background-color: #f0f0f0;"
-            "}"
-            "QLabel {"
-            "    color: black;"
-            "}"
-            "QPushButton {"
-            "    background-color: #e0e0e0;"
-            "    color: black;"
-            "    border: 1px solid #808080;"
-            "}"
-            "QRadioButton {"
-            "    color: black;"
-            "}"
-            "QCheckBox {"
-            "    color: black;"
-            "}"
-            "QGroupBox {"
-            "    color: black;"
-            "    border: 1px solid #808080;"
-            "}"
-            );
-    }
-
+    this->setStyleSheet(ThemeStyles::getPreviewStyleSheet(theme));
 }
 
 // Нажатие на кнопку "Отмена" //

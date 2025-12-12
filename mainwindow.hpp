@@ -14,7 +14,7 @@ class MainWindow : public QMainWindow
 
 private:
 
-    Ui::MainWindow* ui;
+    std::unique_ptr<Ui::MainWindow> ui;
     std::shared_ptr<Settings> currentSettings;
     std::shared_ptr<Statistics> gameStatistics;
 

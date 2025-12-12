@@ -630,6 +630,12 @@
 			"MU",
 			"EWIEGA46WW/moc_statistics.cpp",
 			null
+		],
+		[
+			"C:/QtProjects/MinesweeperProject/themestyles.hpp",
+			"MU",
+			"EWIEGA46WW/moc_themestyles.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -717,7 +723,8 @@
 		[ "C:/QtProjects/MinesweeperProject/point.cpp", "MU", null ],
 		[ "C:/QtProjects/MinesweeperProject/settings.cpp", "MU", null ],
 		[ "C:/QtProjects/MinesweeperProject/settingswindow.cpp", "MU", null ],
-		[ "C:/QtProjects/MinesweeperProject/statistics.cpp", "MU", null ]
+		[ "C:/QtProjects/MinesweeperProject/statistics.cpp", "MU", null ],
+		[ "C:/QtProjects/MinesweeperProject/themestyles.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

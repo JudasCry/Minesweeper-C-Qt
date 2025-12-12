@@ -1,15 +1,18 @@
 #include "mainwindow.hpp"
 #include "./ui_mainwindow.h"
+
 #include <QMessageBox>
 #include <QIcon>
 #include <QDebug>
+
 #include "gamewindow.hpp"
 #include "settingswindow.hpp"
+#include "themestyles.hpp"
 
 MainWindow::MainWindow(QWidget *parent)
 
     : QMainWindow(parent),
-      ui(new Ui::MainWindow),
+      ui(std::make_unique<Ui::MainWindow>()),
       currentSettings(std::make_shared<Settings>()),
       gameStatistics(std::make_shared<Statistics>(0, 0, 0, 0, 0))
 
@@ -24,48 +27,20 @@ MainWindow::MainWindow(QWidget *parent)
 
 }
 
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
+MainWindow::~MainWindow() = default;
 
 void MainWindow::applySettings() {
 
     if (!currentSettings) return;
 
     QString theme = currentSettings->getTheme();
-
-    if (theme == "dark") {
-
-        qApp->setStyleSheet(
-            "QMainWindow, QDialog {"
-            "    background-color: #2d2d2d;"
-            "}"
-            "QLabel {"
-            "    color: white;"
-            "}"
-            "QPushButton {"
-            "    background-color: #3d3d3d;"
-            "    color: white;"
-            "    border: 1px solid #555;"
-            "}"
-            "QRadioButton {"
-            "    color: white;"
-            "}"
-            "QCheckBox {"
-            "    color: white;"
-            "}"
-        );
-
-    } else if (theme == "default") {
-        qApp->setStyleSheet("");
-    }
+    qApp->setStyleSheet(ThemeStyles::getStyleSheet(theme));
 
 }
 
 void MainWindow::on_startGameButton_clicked() {
 
-    Difficulty currentDifficulty("Beginner", 9, 9, 10);
+    Difficulty currentDifficulty = Difficulty::beginner();
 
     // Создаём окно с игрой и передаём параметры игры по умолчанию "Новичок" //
     GameWindow* gameWindow = new GameWindow(currentDifficulty, *currentSettings, gameStatistics, this);

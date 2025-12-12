@@ -4,6 +4,7 @@
 
 class Difficulty
 {
+
 private:
 
     QString name;
@@ -19,5 +20,9 @@ public:
     int getWidth() const;
     int getHeight() const;
     int getMines() const;
+
+    static Difficulty beginner();
+    static Difficulty intermediate();
+    static Difficulty expert();
 
 };

@@ -12,21 +12,39 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>500</width>
-    <height>600</height>
+    <width>0</width>
+    <height>0</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>20</number>
+    </property>
+    <property name="topMargin">
+     <number>20</number>
+    </property>
+    <property name="rightMargin">
+     <number>20</number>
+    </property>
+    <property name="bottomMargin">
+     <number>20</number>
+    </property>
     <item>
      <widget class="QWidget" name="headerWidget" native="true">
       <property name="minimumSize">
        <size>
         <width>0</width>
-        <height>0</height>
+        <height>100</height>
        </size>
       </property>
       <property name="layoutDirection">
@@ -107,6 +125,12 @@
     </item>
     <item>
      <widget class="QWidget" name="gameArea" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
       <property name="layoutDirection">
        <enum>Qt::LayoutDirection::LeftToRight</enum>
       </property>
@@ -136,7 +160,10 @@
      <addaction name="expertDifficulty"/>
     </widget>
     <addaction name="restartTrigger"/>
+    <addaction name="separator"/>
     <addaction name="menu_3"/>
+    <addaction name="separator"/>
+    <addaction name="settingsTrigger"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -165,6 +192,11 @@
   <action name="expertDifficulty">
    <property name="text">
     <string>Эксперт</string>
+   </property>
+  </action>
+  <action name="settingsTrigger">
+   <property name="text">
+    <string>Настройки</string>
    </property>
   </action>
  </widget>

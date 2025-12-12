@@ -4,6 +4,7 @@
 #include <QPushButton>
 #include <QPointer>
 #include <memory>
+
 #include "game.hpp"
 
 namespace Ui {
@@ -20,10 +21,6 @@ public:
     static constexpr int CELL_SPACING = 1; // Отступ м/д клетками
 
     static const QMap<int , QString> NUMBER_COLORS; // Контейнер для хранения цветов цифр
-
-    static const QString CLOSED_CELL_STYLE; // Стиль для закрытой клетки
-    static const QString OPENED_CELL_STYLE; // Стиль для открытой клетки
-    static const QString MINE_CELL_STYLE; // Стиль для клетки с миной
 
 private:
 
@@ -42,22 +39,24 @@ public:
 
     void setupConnections();
     void setupUI(const Difficulty& currentDifficulty);
-
-    void closeEvent(QCloseEvent* event);
+    void setupWindowSize(int width, int height, int cellSize);
 
     void onLeftClick(int x, int y);
     void onRightClick(int x, int y);
 
-    void updateCell(int x, int y);
     void updateField();
+    void updateCell(int x, int y);
+    void updateMinesCounter();
 
     QPushButton* getButtonAt(int x, int y);
 
     void createGameField();
-    void setupWindowSize(int width, int height, int cellSize);
     int calculateOptimalCellSize(int width, int height) const;
 
-    void changeDifficulty(QString name, int width, int height, int mines);
+    void changeDifficulty(const Difficulty& newDifficulty);
+    void showSettingsWindow();
+
+    void closeEvent(QCloseEvent* event);
 
 private slots:
 

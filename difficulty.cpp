@@ -34,3 +34,15 @@ int Difficulty::getHeight() const {
 int Difficulty::getMines() const {
     return mines;
 }
+
+Difficulty Difficulty::beginner() {
+    return Difficulty("Новичок", 9, 9, 10);
+}
+
+Difficulty Difficulty::intermediate() {
+    return Difficulty("Любитель", 16, 16, 30);
+}
+
+Difficulty Difficulty::expert() {
+    return Difficulty("Эксперт", 30, 16, 99);
+}

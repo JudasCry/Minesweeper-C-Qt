@@ -12,7 +12,7 @@ Game::Game(const Difficulty& difficulty, const Settings& settings, std::shared_p
       safeStartPoint(0, 0)
 
 {
-
+    field.setTotalMines(difficulty.getMines());
 }
 
 Game::~Game() {}
@@ -39,6 +39,8 @@ void Game::restartGame() {
     this->gameState = GameState::Waiting;
 
     field.resetField();
+
+    field.setTotalMines(currentDifficulty.getMines());
 
     this->safeStartPoint = Point(-1, -1); // Сбрасываем безопасную точку
 
@@ -68,36 +70,38 @@ void Game::cellClick(Point clickPoint) {
         return;
     }
 
+    const Cell* cell = field.getCell(clickPoint.getX(), clickPoint.getY());
+    if (!cell) return;
+
+    // Не открываем клетку с флажком //
+    if (cell->getIsFlagged()) {
+        return;
+    }
+
     bool revealSuccessful = field.revealCell(clickPoint);
 
     if (!revealSuccessful) {
-
         endGame(false);
         return;
-
     }
 
     if (field.checkWin()) {
-
         endGame(true);
         return;
-
     }
 }
 
 void Game::flagToggle(Point flagPoint) {
 
-    if (gameState != GameState::Running) {
+    if (gameState != GameState::Running && gameState != GameState::Waiting) {
         return;
     }
 
     field.toggleFlag(flagPoint);
 
-    if (field.checkWin()) {
-
+    if (field.checkWin() && gameState == GameState::Running) {
         endGame(true);
         return;
-
     }
 }
 
@@ -118,9 +122,7 @@ const Difficulty& Game::getCurrentDifficulty() {
 }
 
 void Game::setCurrentDifficulty(const Difficulty& newDifficulty) {
-
     this->currentDifficulty = newDifficulty;
-
     restartGame();
 }
 

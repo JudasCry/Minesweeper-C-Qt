@@ -89,23 +89,24 @@ bool GameField::toggleFlag(Point p) {
         return false;
     }
 
-    if (cell->getIsFlagged()) {
-
+    if (cell->getIsFlagged()) { // Убираем существующий флаг
         cell->setFlagged(false);
         flagsPlaced--;
-
     }
-    else {
-
+    else if (flagsPlaced < totalMines) { // Ставим флаг если не превышен лимит
         cell->setFlagged(true);
         flagsPlaced++;
-
-    }
+    } else return false;
 
     return true;
 }
 
 // Геттеры //
+
+int GameField::getFlagsPlaced() const {
+    return flagsPlaced;
+}
+
 int GameField::getWidth() const {
     return width;
 }

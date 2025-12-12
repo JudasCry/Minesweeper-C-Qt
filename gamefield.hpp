@@ -28,6 +28,7 @@ public:
     Cell* getCell(int x, int y);
     const Cell* getCell(int x, int y) const;
     std::vector<Cell*> getNeighbours(Point p);
+    int getFlagsPlaced() const;
     int getWidth() const;
     int getHeight() const;
     void setTotalMines(int totalMines);
