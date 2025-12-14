@@ -41,5 +41,6 @@ public:
     std::shared_ptr<Statistics> getStatistics();
 
     void setCurrentDifficulty(const Difficulty& newDifficulty);
+    void setCurrentSettings(const Settings& newSettings);
 
 };

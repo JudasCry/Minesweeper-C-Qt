@@ -1,5 +1,7 @@
 #include "settings.hpp"
+#include <QCoreApplication>
 #include <QDebug>
+#include <QTranslator>
 
 const QString Settings::THEME_KEY = "theme";
 const QString Settings::SOUND_ENABLED_KEY = "soundEnabled";
@@ -90,21 +92,29 @@ const QString& Settings::getTheme() const {
 // Сеттеры //
 void Settings::setLanguage(const QString& lang) {
 
-    if (lang != language) language = lang;
-    save();
+    if (lang != language) {
+
+        language = lang;
+        save();
+
+        // Применяем перевод //
+        QTranslator* translator = new QTranslator();
+        QString qmFile = QString(":/translations/minesweeper_%1").arg(lang);
+
+        if (translator->load(qmFile)) {
+            QCoreApplication::installTranslator(translator);
+            qDebug() << "Язык изменён на:" << lang;
+        }
+    }
 
 }
 
 void Settings::setSoundEnabled(bool enabled) {
-
     soundEnabled = enabled;
     save();
-
 }
 
 void Settings::setTheme(const QString& themeName) {
-
     if (themeName != theme) theme = themeName;
     save();
-
 }

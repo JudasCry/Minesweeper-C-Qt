@@ -25,4 +25,6 @@ public:
     static Difficulty intermediate();
     static Difficulty expert();
 
+    static Difficulty custom();
+
 };

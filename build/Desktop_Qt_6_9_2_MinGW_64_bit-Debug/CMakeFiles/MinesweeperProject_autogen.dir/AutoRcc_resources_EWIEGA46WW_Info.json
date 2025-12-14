@@ -12,7 +12,9 @@
 		"C:/QtProjects/MinesweeperProject/images/smile_default.svg",
 		"C:/QtProjects/MinesweeperProject/images/smile_dark.svg",
 		"C:/QtProjects/MinesweeperProject/images/mine.svg",
-		"C:/QtProjects/MinesweeperProject/themes/dark.png"
+		"C:/QtProjects/MinesweeperProject/themes/dark.png",
+		"C:/QtProjects/MinesweeperProject/translations/minesweeper_en.qm",
+		"C:/QtProjects/MinesweeperProject/translations/minesweeper_ru.qm"
 	],
 	"LOCK_FILE" : "C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/MinesweeperProject_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,

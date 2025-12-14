@@ -164,11 +164,15 @@
     <addaction name="menu_3"/>
     <addaction name="separator"/>
     <addaction name="settingsTrigger"/>
+    <addaction name="staticticsTrigger"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
      <string>Помощь</string>
     </property>
+    <addaction name="howToPlayTrigger"/>
+    <addaction name="separator"/>
+    <addaction name="aboutProgramTrigger"/>
    </widget>
    <addaction name="menu"/>
    <addaction name="menu_2"/>
@@ -197,6 +201,21 @@
   <action name="settingsTrigger">
    <property name="text">
     <string>Настройки</string>
+   </property>
+  </action>
+  <action name="howToPlayTrigger">
+   <property name="text">
+    <string>Как играть</string>
+   </property>
+  </action>
+  <action name="aboutProgramTrigger">
+   <property name="text">
+    <string>О программе</string>
+   </property>
+  </action>
+  <action name="staticticsTrigger">
+   <property name="text">
+    <string>Статистика</string>
    </property>
   </action>
  </widget>

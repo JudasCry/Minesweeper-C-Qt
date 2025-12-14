@@ -6450,6 +6450,18 @@
 			"value" : "C:/Qt1/6.9.2/mingw_64/bin/qmake.exe"
 		},
 		{
+			"name" : "QT_TOOL_COMMAND_WRAPPER_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to the wrapper of the tool commands"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/.qt/bin/qt_setup_tool_path.bat"
+		},
+		{
 			"name" : "Qt6CorePrivate_DIR",
 			"properties" : 
 			[
@@ -6532,6 +6544,18 @@
 			],
 			"type" : "PATH",
 			"value" : "C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6Gui"
+		},
+		{
+			"name" : "Qt6LinguistTools_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Qt6LinguistTools."
+				}
+			],
+			"type" : "PATH",
+			"value" : "C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6LinguistTools"
 		},
 		{
 			"name" : "Qt6SvgPrivate_DIR",
@@ -6716,6 +6740,18 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "C:/Program Files (x86)/MinesweeperProject"
+		},
+		{
+			"name" : "_Qt6_LINGUIST_TOOLS_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "C:/Qt1/6.9.2/mingw_64/lib/cmake/Qt6LinguistTools"
 		}
 	],
 	"kind" : "cache",

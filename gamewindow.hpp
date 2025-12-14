@@ -32,7 +32,7 @@ private:
 public:
 
     explicit GameWindow(const Difficulty& currentDifficulty,
-                        const Settings& settings,
+                        std::shared_ptr<Settings> settings,
                         std::shared_ptr<Statistics> statistics,
                         QWidget *parent = nullptr);
     ~GameWindow();
@@ -55,6 +55,7 @@ public:
 
     void changeDifficulty(const Difficulty& newDifficulty);
     void showSettingsWindow();
+    void showStatisticsWindow();
 
     void closeEvent(QCloseEvent* event);
 

@@ -623,6 +623,8 @@ MinesweeperProject_autogen/timestamp: \
 	C:/Qt1/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
 	C:/Qt1/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
 	C:/QtProjects/MinesweeperProject/CMakeLists.txt \
+	C:/QtProjects/MinesweeperProject/aboutprogram.cpp \
+	C:/QtProjects/MinesweeperProject/aboutprogram.hpp \
 	C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
 	C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/.qtc/package-manager/maintenance_tool_provider.cmake \
 	C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
@@ -642,6 +644,8 @@ MinesweeperProject_autogen/timestamp: \
 	C:/QtProjects/MinesweeperProject/gametimer.hpp \
 	C:/QtProjects/MinesweeperProject/gamewindow.cpp \
 	C:/QtProjects/MinesweeperProject/gamewindow.hpp \
+	C:/QtProjects/MinesweeperProject/howtoplay.cpp \
+	C:/QtProjects/MinesweeperProject/howtoplay.hpp \
 	C:/QtProjects/MinesweeperProject/main.cpp \
 	C:/QtProjects/MinesweeperProject/mainwindow.cpp \
 	C:/QtProjects/MinesweeperProject/mainwindow.hpp \
@@ -656,9 +660,14 @@ MinesweeperProject_autogen/timestamp: \
 	C:/QtProjects/MinesweeperProject/settingswindow.hpp \
 	C:/QtProjects/MinesweeperProject/statistics.cpp \
 	C:/QtProjects/MinesweeperProject/statistics.hpp \
+	C:/QtProjects/MinesweeperProject/statisticswindow.cpp \
+	C:/QtProjects/MinesweeperProject/statisticswindow.hpp \
 	C:/QtProjects/MinesweeperProject/themestyles.cpp \
 	C:/QtProjects/MinesweeperProject/themestyles.hpp \
+	C:/QtProjects/MinesweeperProject/aboutprogram.ui \
 	C:/QtProjects/MinesweeperProject/gamewindow.ui \
+	C:/QtProjects/MinesweeperProject/howtoplay.ui \
 	C:/QtProjects/MinesweeperProject/mainwindow.ui \
 	C:/QtProjects/MinesweeperProject/settingswindow.ui \
+	C:/QtProjects/MinesweeperProject/statisticswindow.ui \
 	C:/Qt1/Tools/CMake_64/bin/cmake.exe

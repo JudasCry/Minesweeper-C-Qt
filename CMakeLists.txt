@@ -21,9 +21,7 @@ set(PROJECT_SOURCES
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    find_package(Qt6 REQUIRED COMPONENTS Core)
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
-find_package(Qt6 REQUIRED COMPONENTS Svg)
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets Svg)
 
     qt_add_executable(MinesweeperProject
         MANUAL_FINALIZATION
@@ -41,7 +39,10 @@ find_package(Qt6 REQUIRED COMPONENTS Svg)
         gamewindow.hpp gamewindow.cpp gamewindow.ui
         settingswindow.hpp settingswindow.cpp settingswindow.ui
         themestyles.hpp themestyles.cpp
-
+        howtoplay.hpp howtoplay.cpp howtoplay.ui
+        aboutprogram.hpp aboutprogram.cpp aboutprogram.ui
+        statisticswindow.hpp statisticswindow.cpp statisticswindow.ui
+        resources.qrc
     )
 
 # Define target properties for Android with Qt 6 as:
@@ -58,14 +59,32 @@ else()
     else()
         add_executable(MinesweeperProject
             ${PROJECT_SOURCES}
+            game.hpp game.cpp
+            difficulty.hpp difficulty.cpp
+            gamefield.hpp gamefield.cpp
+            cell.hpp cell.cpp
+            mineplacer.hpp mineplacer.cpp
+            point.hpp point.cpp
+            statistics.hpp statistics.cpp
+            settings.hpp settings.cpp
+            gametimer.hpp gametimer.cpp
+            gamestate.hpp
+            gamewindow.hpp gamewindow.cpp gamewindow.ui
+            settingswindow.hpp settingswindow.cpp settingswindow.ui
+            themestyles.hpp themestyles.cpp
+            howtoplay.hpp howtoplay.cpp howtoplay.ui
+            aboutprogram.hpp aboutprogram.cpp aboutprogram.ui
+            statisticswindow.hpp statisticswindow.cpp statisticswindow.ui
+            translationmanager.hpp translationmanager.cpp
         )
     endif()
 endif()
 
-target_link_libraries(MinesweeperProject PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
-target_link_libraries(MinesweeperProject PRIVATE Qt6::Core)
-target_link_libraries(MinesweeperProject PRIVATE Qt6::Widgets)
-target_link_libraries(MinesweeperProject PRIVATE Qt6::Svg)
+target_link_libraries(MinesweeperProject PRIVATE
+    Qt${QT_VERSION_MAJOR}::Core
+    Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${QT_VERSION_MAJOR}::Svg
+)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

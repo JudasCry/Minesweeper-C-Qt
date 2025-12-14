@@ -11,25 +11,20 @@ void MinePlacer::placeMines(GameField& field, int mines, Point safePoint) {
     int fieldWidth = field.getWidth();
     int fieldHeight = field.getHeight();
 
-    int safeRadius = 1; // Определяем безопасную зону 3x3
-
-    if (fieldWidth >= 16 || fieldHeight >= 16) {
-        safeRadius = 1; // Зона 5x5
-    }
+    int safeRadius = (fieldWidth >= LARGE_FIELD_THRESHOLD || fieldHeight >= LARGE_FIELD_THRESHOLD)
+                    ? DEFAULT_SAFE_RADIUS_LARGE
+                    : DEFAULT_SAFE_RADIUS_SMALL;
 
     int attempts = 0;
-    int maxAttempts = fieldWidth * fieldHeight * 2;
+    int maxAttempts = fieldWidth * fieldHeight * MAX_ATTEMPTS_MULTIPLIER;
 
     while (placedMines < mines && attempts < maxAttempts) {
 
         Point randomPos = getRandomPosition(fieldWidth, fieldHeight);
 
-        if (inSafeZone(randomPos, safePoint, safeRadius)) {
-            attempts++;
-            continue;
-        }
-
-        if (canPlaceMine(field, randomPos, safePoint)) {
+        // Ставим мину если не безопасная зона //
+        if (!inSafeZone(randomPos, safePoint, safeRadius)
+            && canPlaceMine(field, randomPos, safePoint)) {
 
             Cell* cell = field.getCell(randomPos.getX(), randomPos.getY());
 
@@ -37,6 +32,7 @@ void MinePlacer::placeMines(GameField& field, int mines, Point safePoint) {
                 cell->setMine(true);
                 placedMines++;
             }
+
         }
 
         attempts++;
@@ -58,7 +54,7 @@ bool MinePlacer::canPlaceMine(const GameField& field, Point point, Point safePoi
 }
 
 // Проверка на нахождение точки в безопасной зоне вокруг безопасной точки //
-bool MinePlacer::inSafeZone(Point point, Point safePoint, int radius) const {
+bool MinePlacer::inSafeZone(const Point& point, const Point& safePoint, int radius) const {
 
     int dx = std::abs(point.getX() - safePoint.getX());
     int dy = std::abs(point.getY() - safePoint.getY());

@@ -251,60 +251,66 @@
      <property name="title">
       <string>Сложность</string>
      </property>
-     <addaction name="action_6"/>
-     <addaction name="action_7"/>
-     <addaction name="action_5"/>
+     <addaction name="beginnerDifficulty"/>
+     <addaction name="intermediateDifficulty"/>
+     <addaction name="expertDifficulty"/>
     </widget>
-    <addaction name="action_1"/>
+    <addaction name="restartTrigger"/>
     <addaction name="separator"/>
     <addaction name="menu_3"/>
     <addaction name="separator"/>
-    <addaction name="action_2"/>
+    <addaction name="settingsTrigger"/>
+    <addaction name="statisticsTrigger"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
      <string>Помощь</string>
     </property>
-    <addaction name="action_3"/>
+    <addaction name="howToPlayTrigger"/>
     <addaction name="separator"/>
-    <addaction name="action_4"/>
+    <addaction name="aboutProgramTrigger"/>
    </widget>
    <addaction name="menu"/>
    <addaction name="menu_2"/>
   </widget>
-  <action name="action_1">
+  <action name="restartTrigger">
    <property name="text">
     <string>Новая игра</string>
    </property>
   </action>
-  <action name="action_2">
+  <action name="settingsTrigger">
    <property name="text">
     <string>Настройки</string>
    </property>
   </action>
-  <action name="action_6">
+  <action name="beginnerDifficulty">
    <property name="text">
     <string>Новичок</string>
    </property>
   </action>
-  <action name="action_3">
+  <action name="howToPlayTrigger">
    <property name="text">
     <string>Как играть</string>
    </property>
   </action>
-  <action name="action_4">
+  <action name="aboutProgramTrigger">
    <property name="text">
     <string>О программе</string>
    </property>
   </action>
-  <action name="action_7">
+  <action name="intermediateDifficulty">
    <property name="text">
     <string>Любитель</string>
    </property>
   </action>
-  <action name="action_5">
+  <action name="expertDifficulty">
    <property name="text">
     <string>Профи</string>
+   </property>
+  </action>
+  <action name="statisticsTrigger">
+   <property name="text">
+    <string>Статистика</string>
    </property>
   </action>
  </widget>

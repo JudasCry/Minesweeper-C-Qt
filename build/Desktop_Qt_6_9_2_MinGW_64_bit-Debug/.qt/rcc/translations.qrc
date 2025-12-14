@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/translations">
+    <file alias="minesweeper_ru.qm">C:/QtProjects/MinesweeperProject/translations/minesweeper_ru.qm</file>
+    <file alias="minesweeper_en.qm">C:/QtProjects/MinesweeperProject/translations/minesweeper_en.qm</file>
+  </qresource>
+</RCC>
+

@@ -25,13 +25,16 @@ public:
 
     bool revealCell(Point p);
     bool toggleFlag(Point p);
+
     Cell* getCell(int x, int y);
     const Cell* getCell(int x, int y) const;
     std::vector<Cell*> getNeighbours(Point p);
     int getFlagsPlaced() const;
     int getWidth() const;
     int getHeight() const;
+
     void setTotalMines(int totalMines);
+
     void countAdjacentMines();
     bool checkWin();
     void revealAllMines();

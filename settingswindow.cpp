@@ -23,6 +23,8 @@ SettingsWindow::SettingsWindow(std::shared_ptr<Settings> settings, QWidget* pare
 
     setupConnections();
 
+    applyThemePreview();
+
 }
 
 SettingsWindow::~SettingsWindow() = default;
@@ -144,11 +146,13 @@ void SettingsWindow::on_cancelButton_clicked() {
 // Нажатие на кнопку "OK" //
 void SettingsWindow::on_okButton_clicked() {
 
-    currentSettings->setLanguage(tempSettings->getLanguage());
-    currentSettings->setSoundEnabled(tempSettings->getSoundEnabled());
-    currentSettings->setTheme(tempSettings->getTheme());
+    QString newLanguage = tempSettings->getLanguage();
+    bool newSoundEnabled = tempSettings->getSoundEnabled();
+    QString newTheme = tempSettings->getTheme();
 
-    currentSettings->save();
+    currentSettings->setLanguage(newLanguage);
+    currentSettings->setSoundEnabled(newSoundEnabled);
+    currentSettings->setTheme(newTheme);
 
     emit settingsChanged();
     emit windowClosed();
@@ -160,6 +164,7 @@ void SettingsWindow::on_okButton_clicked() {
 void SettingsWindow::on_defaultsButton_clicked() {
 
     tempSettings->resetToDefaults();
+
     loadSettingsToUI();
     applyThemePreview();
 

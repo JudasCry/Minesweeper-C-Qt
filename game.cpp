@@ -105,6 +105,7 @@ void Game::flagToggle(Point flagPoint) {
     }
 }
 
+// Геттеры //
 GameField& Game::getGameField() {
     return field;
 }
@@ -121,15 +122,20 @@ const Difficulty& Game::getCurrentDifficulty() {
     return currentDifficulty;
 }
 
-void Game::setCurrentDifficulty(const Difficulty& newDifficulty) {
-    this->currentDifficulty = newDifficulty;
-    restartGame();
-}
-
 const Settings& Game::getCurrentSettings() {
     return currentSettings;
 }
 
 std::shared_ptr<Statistics> Game::getStatistics() {
     return gameStatistics;
+}
+
+// Сеттеры //
+void Game::setCurrentDifficulty(const Difficulty& newDifficulty) {
+    this->currentDifficulty = newDifficulty;
+    restartGame();
+}
+
+void Game::setCurrentSettings(const Settings& newSettings) {
+    this->currentSettings = newSettings;
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QMainWindow>
+#include "difficulty.hpp"
 #include "settings.hpp"
 #include "statistics.hpp"
 
@@ -15,6 +16,7 @@ class MainWindow : public QMainWindow
 private:
 
     std::unique_ptr<Ui::MainWindow> ui;
+    Difficulty currentDifficulty;
     std::shared_ptr<Settings> currentSettings;
     std::shared_ptr<Statistics> gameStatistics;
 
@@ -23,7 +25,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void setupUI();
+    void setupConnections();
+
     void applySettings();
+
+    void changeEvent(QEvent* event);
 
 private slots:
 

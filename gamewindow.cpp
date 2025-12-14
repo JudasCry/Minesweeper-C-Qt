@@ -4,7 +4,10 @@
 #include <QMessageBox>
 #include <QScreen>
 
+#include "aboutprogram.hpp"
+#include "howtoplay.hpp"
 #include "settingswindow.hpp"
+#include "statisticswindow.hpp"
 #include "themestyles.hpp"
 
 const QMap<int, QString> GameWindow::NUMBER_COLORS = {
@@ -14,19 +17,19 @@ const QMap<int, QString> GameWindow::NUMBER_COLORS = {
 };
 
 GameWindow::GameWindow(const Difficulty& currentDifficulty,
-                       const Settings& settings,
+                       std::shared_ptr<Settings> settings,
                        std::shared_ptr<Statistics> statistics,
                        QWidget* parent)
 
     : QMainWindow(parent),
       ui(std::make_unique<Ui::GameWindow>()),
       game(nullptr),
-      currentSettings(std::make_shared<Settings>(settings))
+      currentSettings(settings)
 {
 
     ui->setupUi(this);
 
-    game = std::make_unique<Game>(currentDifficulty, settings, statistics); // Создаём игру
+    game = std::make_unique<Game>(currentDifficulty, *currentSettings, statistics); // Создаём игру
 
     setupUI(currentDifficulty); // Устанавливаем интерфейс
 
@@ -62,9 +65,23 @@ void GameWindow::setupConnections() {
         changeDifficulty(Difficulty::expert());
     });
 
-    // Соединяем открытие меню настроек //
+    // Соединяем открытие окна "Настройки" //
     connect(ui->settingsTrigger, &QAction::triggered, this, [this]() {
         showSettingsWindow();
+    });
+
+    connect(ui->staticticsTrigger, &QAction::triggered, this, [this]() {
+        showStatisticsWindow();
+    });
+
+    // Соединяем открытие окна "Как играть" //
+    connect(ui->howToPlayTrigger, &QAction::triggered, this, [this]() {
+        HowToPlay::showDialog(this);
+    });
+
+    // Соединяем открытие окна "О программе" //
+    connect(ui->aboutProgramTrigger, &QAction::triggered, this, [this]() {
+        AboutProgram::showDialog(this);
     });
 
 }
@@ -274,7 +291,7 @@ void GameWindow::changeDifficulty(const Difficulty& newDifficulty) {
     game.reset();
 
     // Создаём игру с новой сложностью //
-    game = std::make_unique<Game>(newDifficulty, settings, statistics);
+    game = std::make_unique<Game>(newDifficulty, *currentSettings, statistics);
 
     connect(&game->getTimer(), &GameTimer::timeUpdated, [this](const QString& time) {
         ui->timerLabel->setText(time); // Переподключаем таймер
@@ -296,11 +313,13 @@ void GameWindow::showSettingsWindow() {
     connect(settingsWindow, &SettingsWindow::settingsChanged, this, [this]() {
 
         QString theme = currentSettings->getTheme();
+
+        game->setCurrentSettings(*currentSettings);
+
         theme == "dark" ? ui->restartButton->setIcon(QIcon(":/images/smile_dark.svg"))
                         : ui->restartButton->setIcon(QIcon(":/images/smile_default.svg"));
 
         updateField();
-
         qApp->setStyleSheet(ThemeStyles::getStyleSheet(theme));
 
     });
@@ -309,6 +328,17 @@ void GameWindow::showSettingsWindow() {
 
     settingsWindow->setModal(true);
     settingsWindow->show();
+
+}
+
+void GameWindow::showStatisticsWindow() {
+
+    StatisticsWindow* statisticsWindow = new StatisticsWindow(game->getStatistics(), this);
+
+    connect(statisticsWindow, &StatisticsWindow::windowClosed, statisticsWindow, &QObject::deleteLater);
+
+    statisticsWindow->setModal(true);
+    statisticsWindow->show();
 
 }
 
@@ -379,6 +409,7 @@ void GameWindow::updateCell(int x, int y) {
     }
 }
 
+// Обновление счётчика количества мин //
 void GameWindow::updateMinesCounter() {
 
     if (!game) return;
