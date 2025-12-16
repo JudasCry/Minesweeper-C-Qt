@@ -12,6 +12,8 @@
 #include "statisticswindow.hpp"
 #include "themestyles.hpp"
 
+QTranslator* MainWindow::appTranslator = nullptr;
+
 MainWindow::MainWindow(QWidget *parent)
 
     : QMainWindow(parent),
@@ -70,14 +72,45 @@ void MainWindow::setupConnections() {
         AboutProgram::showDialog(this);
     });
 
+    connect(this, &MainWindow::languageChanged, this, &MainWindow::onLanguageChanged);
+
 }
 
+// Применение настроек //
 void MainWindow::applySettings() {
 
     if (!currentSettings) return;
 
     QString theme = currentSettings->getTheme();
     qApp->setStyleSheet(ThemeStyles::getStyleSheet(theme));
+
+    QString lang = currentSettings->getLanguage();
+
+    // Удаляем старый глобальный переводчик //
+    if (MainWindow::appTranslator) {
+        QCoreApplication::removeTranslator(MainWindow::appTranslator);
+        delete MainWindow::appTranslator;
+        MainWindow::appTranslator = nullptr;
+    }
+
+    // Создаем и устанавливаем новый глобальный переводчик //
+    MainWindow::appTranslator = new QTranslator();
+    QString qmFile = QString(":/translations/minesweeper_%1").arg(lang);
+
+    if (MainWindow::appTranslator->load(qmFile)) {
+        QCoreApplication::installTranslator(MainWindow::appTranslator);
+    } else { // Альтернативный путь
+        qmFile = QString(":/translations/minesweeper_%1.qm").arg(lang);
+        if (MainWindow::appTranslator->load(qmFile)) {
+            QCoreApplication::installTranslator(MainWindow::appTranslator);
+        } else {
+            qDebug() << "Не удалось загрузить перевод для языка:" << lang;
+            delete MainWindow::appTranslator;
+            MainWindow::appTranslator = nullptr;
+        }
+    }
+
+    emit languageChanged(lang);
 
 }
 
@@ -86,15 +119,14 @@ void MainWindow::on_startGameButton_clicked() {
     // Создаём окно с игрой и передаём параметры игры по умолчанию "Новичок" //
     GameWindow* gameWindow = new GameWindow(currentDifficulty, currentSettings, gameStatistics, this);
 
-    // Показываем главное меню при закрытии игры //
     connect(gameWindow, &GameWindow::windowClosed, this, &MainWindow::show);
 
-    // Автоудаление окна при закрытии //
     connect(gameWindow, &GameWindow::windowClosed, gameWindow, &QObject::deleteLater);
+
+    connect(gameWindow, &GameWindow::languageChanged, this, &MainWindow::applySettings);
 
     gameWindow->show();
     this->hide();
-
 }
 
 void MainWindow::on_settingsButton_clicked() {
@@ -104,9 +136,15 @@ void MainWindow::on_settingsButton_clicked() {
     // Подключаем сигнал о смене настроек //
     connect(settingsWindow, &SettingsWindow::settingsChanged, this, &MainWindow::applySettings);
 
-    // Показываем главное меню при закрытии настроек //
-    connect(settingsWindow, &SettingsWindow::windowClosed, this, &MainWindow::show);
+    connect(settingsWindow, &SettingsWindow::settingsChanged, this, &MainWindow::applySettings);
 
+    // При закрытии окна просто показываем главное меню
+    connect(settingsWindow, &SettingsWindow::windowClosed, this, [this, settingsWindow]() {
+        this->show();
+        settingsWindow->deleteLater();
+    });
+
+    settingsWindow->setModal(true);
     settingsWindow->show();
     this->hide();
 }
@@ -119,9 +157,15 @@ void MainWindow::on_quitButton_clicked() {
     close();
 }
 
+void MainWindow::onLanguageChanged(const QString& lang) {
+    Q_UNUSED(lang);
+    ui->retranslateUi(this);
+    setWindowTitle(tr("Сапёр"));
+}
+
 void MainWindow::changeEvent(QEvent* event) {
     if (event->type() == QEvent::LanguageChange) {
-        ui->retranslateUi(this); // Переводим UI
+        ui->retranslateUi(this);
         setWindowTitle(tr("Сапёр"));
     }
     QMainWindow::changeEvent(event);

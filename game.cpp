@@ -51,9 +51,10 @@ void Game::restartGame() {
 
 void Game::endGame(bool won) {
 
+    int timePlayed = timer.getElapsedSeconds();
+
     timer.stop();
 
-    int timePlayed = timer.getElapsedSeconds();
     gameStatistics->addGameResult(won, timePlayed);
 
     gameState = won ? GameState::Won : GameState::Lost;

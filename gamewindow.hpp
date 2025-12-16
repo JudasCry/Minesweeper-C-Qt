@@ -55,9 +55,11 @@ public:
 
     void changeDifficulty(const Difficulty& newDifficulty);
     void showSettingsWindow();
+    void updateMenuLanguage();
     void showStatisticsWindow();
 
-    void closeEvent(QCloseEvent* event);
+    void closeEvent(QCloseEvent* event) override;
+    void changeEvent(QEvent* event) override;
 
 private slots:
 
@@ -66,5 +68,6 @@ private slots:
 signals:
 
     void windowClosed();
+    void languageChanged(const QString& language);
 
 };

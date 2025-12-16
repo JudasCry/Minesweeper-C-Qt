@@ -29,14 +29,15 @@ SettingsWindow::SettingsWindow(std::shared_ptr<Settings> settings, QWidget* pare
 
 SettingsWindow::~SettingsWindow() = default;
 
-void SettingsWindow::initThemes()
-{
+// Инициализация тем //
+void SettingsWindow::initThemes() {
     themes = {
         {"default", "Стандартная", ":/images/smile_default.svg"},
         {"dark", "Темная", ":/images/smile_dark.svg"},
     };
 }
 
+// Установка интерфейса //
 void SettingsWindow::setupUI() {
 
     ui->themeImageLabel->setText("");
@@ -52,18 +53,23 @@ void SettingsWindow::setupConnections() {
 
     // Устанавливаем сигналы от радиокнопок, чекбоксов //
     connect(ui->russianRadioButton, &QRadioButton::toggled, [this](bool checked) {
-        if (checked && tempSettings)
+        if (checked && tempSettings) {
             tempSettings->setLanguage("ru");
+            applyLanguagePreview();
+        }
     });
 
     connect(ui->englishRadioButton, &QRadioButton::toggled, [this](bool checked) {
-        if (checked && tempSettings)
+        if (checked && tempSettings) {
             tempSettings->setLanguage("en");
+            applyLanguagePreview();
+        }
     });
 
     connect(ui->volumeCheckBox, &QCheckBox::toggled, [this](bool checked) {
-        if (tempSettings)
+        if (tempSettings) {
             tempSettings->setSoundEnabled(checked);
+        }
     });
 
 }
@@ -100,6 +106,7 @@ void SettingsWindow::loadSettingsToUI() {
 
 }
 
+// Обновление интерфейса темы //
 void SettingsWindow::updateThemeDisplay()
 {
 
@@ -131,10 +138,47 @@ void SettingsWindow::updateThemeDisplay()
 
 }
 
-// Предпоказ новой выбранной темы //
+// Предпоказ выбранной темы //
 void SettingsWindow::applyThemePreview() {
     QString theme = tempSettings->getTheme();
     this->setStyleSheet(ThemeStyles::getPreviewStyleSheet(theme));
+}
+
+// Предпоказ выбранного языка //
+void SettingsWindow::applyLanguagePreview()
+{
+    if (!tempSettings) return;
+
+    QString langId = tempSettings->getLanguage();
+
+    // Удаляем предыдущий временный переводчик //
+    if (tempTranslator) {
+        QCoreApplication::removeTranslator(tempTranslator.get());
+        tempTranslator.reset();
+    }
+
+    // Меняем текст вручную для предпросмотра //
+    if (langId == "ru") {
+        ui->languageGroupBox->setTitle("Язык");
+        ui->russianRadioButton->setText("Русский");
+        ui->englishRadioButton->setText("English");
+        ui->themeGroupBox->setTitle("Тема");
+        ui->volumeCheckBox->setText("Звук");
+        ui->defaultsButton->setText("По умолчанию");
+        ui->okButton->setText("OK");
+        ui->cancelButton->setText("Отмена");
+        setWindowTitle("Настройки");
+    } else if (langId == "en") {
+        ui->languageGroupBox->setTitle("Language");
+        ui->russianRadioButton->setText("Russian");
+        ui->englishRadioButton->setText("English");
+        ui->themeGroupBox->setTitle("Theme");
+        ui->volumeCheckBox->setText("Sound");
+        ui->defaultsButton->setText("Defaults");
+        ui->okButton->setText("OK");
+        ui->cancelButton->setText("Cancel");
+        setWindowTitle("Settings");
+    }
 }
 
 // Нажатие на кнопку "Отмена" //
@@ -167,6 +211,7 @@ void SettingsWindow::on_defaultsButton_clicked() {
 
     loadSettingsToUI();
     applyThemePreview();
+    applyLanguagePreview();
 
 }
 

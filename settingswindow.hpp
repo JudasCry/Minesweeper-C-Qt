@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QDialog>
+#include <QTranslator>
 
 #include "settings.hpp"
 
@@ -15,9 +16,9 @@ class SettingsWindow : public QDialog
 private:
 
     struct ThemeInfo {
-        QString id;      // "default", "dark"
-        QString name;    // "Стандартная", "Темная"
-        QString imagePath; // ":/themes/default.png"
+        QString id;
+        QString name;
+        QString imagePath;
     };
 
 private:
@@ -25,6 +26,7 @@ private:
     std::unique_ptr<Ui::SettingsWindow> ui;
     std::shared_ptr<Settings> currentSettings;
     std::shared_ptr<Settings> tempSettings;
+    std::unique_ptr<QTranslator> tempTranslator;
 
     QVector<ThemeInfo> themes;
     int currentThemeIndex = 0;
@@ -34,15 +36,19 @@ public:
     explicit SettingsWindow(std::shared_ptr<Settings> currentSettings, QWidget* parent = nullptr);
     ~SettingsWindow();
 
-    void closeEvent(QCloseEvent* event);
-
     void initThemes();
-    void updateThemeDisplay();
-    void applyThemePreview();
 
     void setupUI();
     void setupConnections();
+
     void loadSettingsToUI();
+
+    void updateThemeDisplay();
+
+    void applyThemePreview();
+    void applyLanguagePreview();
+
+    void closeEvent(QCloseEvent* event);
 
 private slots:
 

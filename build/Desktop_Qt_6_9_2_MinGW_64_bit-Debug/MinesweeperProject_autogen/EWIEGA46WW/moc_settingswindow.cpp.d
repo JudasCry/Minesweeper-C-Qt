@@ -2,6 +2,7 @@ C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/Mines
   C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/MinesweeperProject_autogen/moc_predefs.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/QSettings \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/QString \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/QTranslator \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/q17memory.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/q20functional.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/q20iterator.h \
@@ -115,6 +116,7 @@ C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/Mines
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qtmetamacros.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qtnoop.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qtpreprocessorsupport.h \
+  C:/Qt1/6.9.2/mingw_64/include/QtCore/qtranslator.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qtresource.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qttranslation.h \
   C:/Qt1/6.9.2/mingw_64/include/QtCore/qttypetraits.h \

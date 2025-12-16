@@ -1,6 +1,8 @@
 #pragma once
 
 #include <QMainWindow>
+#include <QTranslator>
+
 #include "difficulty.hpp"
 #include "settings.hpp"
 #include "statistics.hpp"
@@ -12,6 +14,10 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+
+public:
+
+    static QTranslator* appTranslator;
 
 private:
 
@@ -38,5 +44,12 @@ private slots:
     void on_settingsButton_clicked();
     void on_statisticsButton_clicked();
     void on_quitButton_clicked();
+
+    void onLanguageChanged(const QString& lang);
+
+signals:
+
+    void languageChanged(const QString& language);
+    void settingsChanged();
 
 };

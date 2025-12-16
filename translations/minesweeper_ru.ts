@@ -22,16 +22,6 @@
 <context>
     <name>GameWindow</name>
     <message>
-        <location filename="../gamewindow.ui" line="20"/>
-        <source>MainWindow</source>
-        <translation>MainWindow</translation>
-    </message>
-    <message>
-        <location filename="../gamewindow.ui" line="94"/>
-        <source>PushButton</source>
-        <translation>PushButton</translation>
-    </message>
-    <message>
         <location filename="../gamewindow.ui" line="152"/>
         <source>Игра</source>
         <translation>Игра</translation>

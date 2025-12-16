@@ -37,6 +37,8 @@ GameWindow::GameWindow(const Difficulty& currentDifficulty,
 
     setupConnections(); // Подключаем сигналы
 
+    updateMenuLanguage();
+
 }
 
 GameWindow::~GameWindow() = default;
@@ -281,14 +283,14 @@ void GameWindow::changeDifficulty(const Difficulty& newDifficulty) {
         QLayout* oldLayout = ui->gameArea->layout();
         QLayoutItem* item;
         while ((item = oldLayout->takeAt(0)) != nullptr) {
-            delete item->widget();
+            if (QWidget* widget = item->widget()) {
+                widget->deleteLater();
+            }
             delete item;
         }
         delete oldLayout;
     }
     buttons.clear();
-
-    game.reset();
 
     // Создаём игру с новой сложностью //
     game = std::make_unique<Game>(newDifficulty, *currentSettings, statistics);
@@ -313,6 +315,7 @@ void GameWindow::showSettingsWindow() {
     connect(settingsWindow, &SettingsWindow::settingsChanged, this, [this]() {
 
         QString theme = currentSettings->getTheme();
+        QString lang = currentSettings->getLanguage();
 
         game->setCurrentSettings(*currentSettings);
 
@@ -321,6 +324,20 @@ void GameWindow::showSettingsWindow() {
 
         updateField();
         qApp->setStyleSheet(ThemeStyles::getStyleSheet(theme));
+
+        emit languageChanged(lang);
+        updateMenuLanguage();
+
+        QString diffName = game->getCurrentDifficulty().getName();
+
+        if (lang == "ru") {
+            if (diffName == "Beginner") diffName = "Новичок";
+            else if (diffName == "Intermediate") diffName = "Любитель";
+            else if (diffName == "Expert") diffName = "Эксперт";
+            setWindowTitle("Сапёр - " + diffName);
+        } else {
+            setWindowTitle("Minesweeper - " + diffName);
+        }
 
     });
 
@@ -331,6 +348,39 @@ void GameWindow::showSettingsWindow() {
 
 }
 
+// Обновление языка в окне игры
+void GameWindow::updateMenuLanguage()
+{
+    QString lang = currentSettings->getLanguage();
+
+    if (lang == "ru") {
+        ui->gameMenu->setTitle("Игра");
+        ui->difficultyMenu->setTitle("Сложность");
+        ui->helpMenu->setTitle("Помощь");
+        ui->beginnerDifficulty->setText("Новичок");
+        ui->intermediateDifficulty->setText("Любитель");
+        ui->expertDifficulty->setText("Эксперт");
+        ui->restartTrigger->setText("Новая игра");
+        ui->settingsTrigger->setText("Настройки");
+        ui->staticticsTrigger->setText("Статистика");
+        ui->howToPlayTrigger->setText("Как играть");
+        ui->aboutProgramTrigger->setText("О программе");
+    } else if (lang == "en") {
+        ui->gameMenu->setTitle("Game");
+        ui->difficultyMenu->setTitle("Difficulty");
+        ui->helpMenu->setTitle("Help");
+        ui->beginnerDifficulty->setText("Beginner");
+        ui->intermediateDifficulty->setText("Intermediate");
+        ui->expertDifficulty->setText("Expert");
+        ui->restartTrigger->setText("New Game");
+        ui->settingsTrigger->setText("Settings");
+        ui->staticticsTrigger->setText("Statistics");
+        ui->howToPlayTrigger->setText("How to Play");
+        ui->aboutProgramTrigger->setText("About");
+    }
+}
+
+// Показать окно статистики //
 void GameWindow::showStatisticsWindow() {
 
     StatisticsWindow* statisticsWindow = new StatisticsWindow(game->getStatistics(), this);
@@ -441,6 +491,18 @@ void GameWindow::on_restartButton_clicked() {
     updateMinesCounter();
 
     ui->timerLabel->setText("000");
+}
+
+void GameWindow::changeEvent(QEvent* event)
+{
+    if (event->type() == QEvent::LanguageChange) {
+        ui->retranslateUi(this);
+        updateMenuLanguage();
+
+        QString diffName = tr(game->getCurrentDifficulty().getName().toUtf8());
+        setWindowTitle(tr("Сапёр - %1").arg(diffName));
+    }
+    QMainWindow::changeEvent(event);
 }
 
 // Событие при закрытии окна //

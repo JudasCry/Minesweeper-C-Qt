@@ -54,5 +54,3 @@ void GameTimer::updateTimer() {
     }
 
 }
-
-

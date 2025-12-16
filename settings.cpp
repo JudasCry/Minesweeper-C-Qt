@@ -91,22 +91,10 @@ const QString& Settings::getTheme() const {
 
 // Сеттеры //
 void Settings::setLanguage(const QString& lang) {
-
     if (lang != language) {
-
         language = lang;
         save();
-
-        // Применяем перевод //
-        QTranslator* translator = new QTranslator();
-        QString qmFile = QString(":/translations/minesweeper_%1").arg(lang);
-
-        if (translator->load(qmFile)) {
-            QCoreApplication::installTranslator(translator);
-            qDebug() << "Язык изменён на:" << lang;
-        }
     }
-
 }
 
 void Settings::setSoundEnabled(bool enabled) {
@@ -115,6 +103,8 @@ void Settings::setSoundEnabled(bool enabled) {
 }
 
 void Settings::setTheme(const QString& themeName) {
-    if (themeName != theme) theme = themeName;
-    save();
+    if (themeName != theme) {
+        theme = themeName;
+        save();
+    }
 }

@@ -23,7 +23,8 @@
 			"include",
 			"find_package",
 			"find_dependency",
-			"_qt_internal_find_qt_dependencies"
+			"_qt_internal_find_qt_dependencies",
+			"add_dependencies"
 		],
 		"files" : 
 		[
@@ -273,6 +274,12 @@
 				"file" : 13,
 				"line" : 61,
 				"parent" : 40
+			},
+			{
+				"command" : 11,
+				"file" : 1,
+				"line" : 121,
+				"parent" : 0
 			}
 		]
 	},
@@ -415,6 +422,10 @@
 		{
 			"backtrace" : 0,
 			"id" : "MinesweeperProject_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 42,
+			"id" : "update_translations::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "MinesweeperProject::@6890427a1f51a3e7e1df",
