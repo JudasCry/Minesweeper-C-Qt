@@ -1,6 +1,7 @@
 <!DOCTYPE RCC>
 <RCC version="1.0">
 	<qresource prefix="/">
+		<file>mine.ico</file>
 		<file>images/smile_default.svg</file>
 		<file>images/smile_dark.svg</file>
 		<file>images/mine.svg</file>

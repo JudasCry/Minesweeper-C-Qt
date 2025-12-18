@@ -1,0 +1,31 @@
+{
+	"BUILD_DIR" : "C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-u0420u0435u043bu0438u0437/MinesweeperProject_autogen",
+	"CMAKE_BINARY_DIR" : "C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-u0420u0435u043bu0438u0437",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-u0420u0435u043bu0438u0437",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/QtProjects/MinesweeperProject",
+	"CMAKE_SOURCE_DIR" : "C:/QtProjects/MinesweeperProject",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-u0420u0435u043bu0438u0437/MinesweeperProject_autogen/include",
+	"INPUTS" : 
+	[
+		"C:/QtProjects/MinesweeperProject/mine.ico",
+		"C:/QtProjects/MinesweeperProject/images/smile_default.svg",
+		"C:/QtProjects/MinesweeperProject/images/smile_dark.svg",
+		"C:/QtProjects/MinesweeperProject/images/mine.svg",
+		"C:/QtProjects/MinesweeperProject/themes/dark.png",
+		"C:/QtProjects/MinesweeperProject/translations/minesweeper_en.qm",
+		"C:/QtProjects/MinesweeperProject/translations/minesweeper_ru.qm"
+	],
+	"LOCK_FILE" : "C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-u0420u0435u043bu0438u0437/CMakeFiles/MinesweeperProject_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "C:/Qt1/6.9.2/mingw_64/bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "C:/QtProjects/MinesweeperProject/build/Desktop_Qt_6_9_2_MinGW_64_bit-u0420u0435u043bu0438u0437/CMakeFiles/MinesweeperProject_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "C:/QtProjects/MinesweeperProject/resources.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

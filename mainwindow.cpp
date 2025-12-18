@@ -35,10 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow() = default;
 
 void MainWindow::setupUI() {
-
-    setWindowIcon(QIcon("C:/QtProjects/MinesweeperProject/mine.ico"));
-    // setStyleSheet("background-color: #c0c0c0;");
-
+    setWindowIcon(QIcon(":/mine.ico"));
 }
 
 void MainWindow::setupConnections() {
